@@ -18,6 +18,7 @@ public class JobHunter implements Subject{
 	
 	public void remove(Observer o) {
 		observers.remove(o);
+		// it doesn't include update because it will have no access to data once removed 
 		
 	}
 	
@@ -37,6 +38,18 @@ public class JobHunter implements Subject{
 		for(int i=0;i<observers.size();i++) {
 			Observer o = observers.get(i);
 			o.update(jobs);
+		}
+	}
+	
+	public void populate(ArrayList<String> jobs) {
+		for(int i = 0; i < jobs.size(); i++)
+			this.jobs.add(jobs.get(i));
+		notifyAllObservers();
+	}
+	
+	public void display() {
+		for(int i=0;i<jobs.size();i++) {
+			System.out.println(jobs.get(i));
 		}
 	}
 }

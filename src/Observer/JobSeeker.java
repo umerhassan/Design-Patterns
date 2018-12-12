@@ -19,6 +19,7 @@ public class JobSeeker implements Observer{
 	
 	
 	public void display() {
+		System.out.println("Notification to Seeker");
 		for(int i=0;i<jobs.size();i++) {
 			System.out.println(jobs.get(i));
 		}
