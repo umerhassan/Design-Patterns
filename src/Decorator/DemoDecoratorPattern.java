@@ -25,8 +25,9 @@ public class DemoDecoratorPattern extends JPanel {
  		// and thickness = 10.
  	    t = new FrameDecorator(t, 25, 25, 110, 110, 10);
  
- 	    
+ 	    // Now lets add a FrameDecorator with x = 25, y = 25, width = 110, height = 110,
  	    t = new ColorDecorator(t, 25, 25, 110, 110);
+ 	    
  	    // Now lets draw the product on the screen 	 
  	    t.draw(g);
     }
